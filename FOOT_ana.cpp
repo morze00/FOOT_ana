@@ -250,8 +250,8 @@ void FOOT_ana(int firstEvent, int max_events)
     //h1d_ped->Fit("gaus","","",-10,10);
     //gPad->SetLogy();
     TCanvas * c_events =  new TCanvas("c_events","c_events",2000,1400);
-    //c_events->Divide(5,5,0,0);
-    c_events->Divide(5,5);
+    //c_events->Divide(5,5);
+    c_events->Divide(5,5,0,0);
     for(auto i=0; i<25; i++)
     {
         c_events->cd(i+1);
