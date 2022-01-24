@@ -10,7 +10,7 @@ bool is_good_strip(UInt_t i)
     if(i==273 || i==276) return false;
     return true;
 }
-void Pedestals_Slice_Fit(int firstEvent, int max_events)
+void FOOT_ana(int firstEvent, int max_events)
 {
     TApplication* theApp = new TApplication("App", 0, 0);
     TH2D * h2d_cal = new TH2D("h2d_cal","After simple pedestal subtraction",640,1,641,1200,-50,50);
@@ -28,7 +28,7 @@ void Pedestals_Slice_Fit(int firstEvent, int max_events)
     //============== Drawing raw data ===============
     TChain * ch = new TChain("h101");
     //ch->Add("cosmicrun-19-01-holddelay-6p5-us.root");
-    ch->Add("cosmicrun-21-01-holddelay-5us.root");
+    ch->Add("../cosmicrun-21-01-holddelay-5us.root");
     TCanvas * c1 = new TCanvas("c1","c1",1000,1000);
     c1->Divide(2,2);
     c1->cd(1);
@@ -282,6 +282,6 @@ int main(Int_t argc, Char_t* argv[])
     gRandom->SetSeed(0);
     gROOT->Macro("rootlogon.C");
     gStyle->SetPalette(kRainBow);
-    Pedestals_Slice_Fit(0,-1);
+    FOOT_ana(0,-1);
     return 0;
 }
