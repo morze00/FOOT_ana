@@ -280,7 +280,7 @@ int main(Int_t argc, Char_t* argv[])
 {
     gRandom = new TRandom3();
     gRandom->SetSeed(0);
-    gROOT->Macro("~/rootlogon.C");
+    gROOT->Macro("rootlogon.C");
     gStyle->SetPalette(kRainBow);
     Pedestals_Slice_Fit(0,-1);
     return 0;
